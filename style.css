@@ -1,15 +1,36 @@
 *{
-box-sizing:border-box;
 margin:0;
 padding:0;
+box-sizing:border-box;
 }
 
 body{
-background:#050505;
-color:white;
+background:#020202;
+color:#fff;
 font-family:"Cairo",sans-serif;
 overflow-x:hidden;
 }
+
+/* خلفية ذهبية متحركة */
+body:before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 20%,rgba(212,175,55,.15),transparent 30%),
+radial-gradient(circle at 80% 80%,rgba(212,175,55,.12),transparent 30%);
+animation:bgMove 8s infinite alternate;
+z-index:-1;
+}
+
+@keyframes bgMove{
+from{transform:scale(1);}
+to{transform:scale(1.2);}
+}
+
+
+/* شاشة البداية */
 
 .intro{
 height:100vh;
@@ -19,82 +40,100 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:25px;
-background:radial-gradient(circle,#3a2b05,#000);
+animation:fadeIn 2s;
 }
+
 
 .intro h1{
-color:#d4af37;
 font-family:"Amiri",serif;
-font-size:38px;
-margin-bottom:30px;
+font-size:45px;
+color:#d4af37;
+animation:glow 3s infinite;
 }
+
 
 .intro p{
-max-width:850px;
 font-family:"Amiri",serif;
-font-size:22px;
-line-height:2.2;
+font-size:23px;
+line-height:2.3;
+max-width:850px;
+margin-top:25px;
 }
 
-.intro span{
-color:#d4af37;
-margin-top:15px;
-}
 
-button{
-margin-top:35px;
-padding:15px 45px;
-border-radius:40px;
-border:1px solid #d4af37;
+.intro button{
+margin-top:40px;
+padding:16px 55px;
+border-radius:50px;
 background:transparent;
+border:1px solid #d4af37;
 color:#d4af37;
-font-size:18px;
+font-size:20px;
+transition:.5s;
 }
+
+
+.intro button:hover{
+background:#d4af37;
+color:#000;
+transform:scale(1.1);
+}
+
 
 .hidden{
 display:none;
 }
 
-main{
-min-height:100vh;
-background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.95));
-}
+
+/* الصفحة الرئيسية */
 
 .hero{
-min-height:80vh;
+min-height:90vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:30px;
+animation:fadeUp 2s;
 }
+
 
 .ring{
-font-size:60px;
+font-size:80px;
+animation:float 3s infinite;
 }
 
+
 .hero h2{
-color:#d4af37;
 font-family:"Amiri",serif;
-font-size:42px;
+font-size:45px;
+color:#d4af37;
 }
+
 
 .hero h1{
 font-family:"Amiri",serif;
-font-size:55px;
+font-size:65px;
 line-height:1.5;
+margin:20px;
 }
+
 
 .hero h1 span{
 color:#d4af37;
 }
 
+
 .welcome{
-max-width:650px;
-margin-top:30px;
+max-width:700px;
+font-size:20px;
 line-height:2;
+color:#ddd;
 }
+
+
+
+/* البطاقات */
 
 .details{
 display:flex;
@@ -104,56 +143,143 @@ flex-wrap:wrap;
 padding:40px;
 }
 
+
 .card{
-width:330px;
-padding:35px;
+width:350px;
+padding:40px;
 text-align:center;
 background:rgba(255,255,255,.05);
-border:1px solid #d4af37;
-border-radius:20px;
+backdrop-filter:blur(10px);
+border:1px solid rgba(212,175,55,.5);
+border-radius:25px;
+transition:.6s;
 }
 
-.card h3{
-color:#d4af37;
-font-size:28px;
+
+.card:hover{
+transform:translateY(-15px);
+box-shadow:0 0 40px rgba(212,175,55,.3);
 }
+
+
+.card h3{
+font-family:"Amiri",serif;
+font-size:32px;
+color:#d4af37;
+margin-bottom:20px;
+}
+
 
 .card a{
 color:#d4af37;
 }
 
+
+/* العداد */
+
 .countdown{
 text-align:center;
-padding:60px 20px;
+padding:70px 20px;
 }
 
+
 .countdown h2{
+font-family:"Amiri",serif;
+font-size:40px;
 color:#d4af37;
 }
+
 
 #timer{
 display:flex;
 justify-content:center;
-gap:15px;
+gap:20px;
 flex-wrap:wrap;
+margin-top:35px;
 }
 
+
 #timer div{
-width:120px;
-padding:20px;
 background:#111;
 border:1px solid #d4af37;
-border-radius:15px;
+border-radius:20px;
+padding:25px;
+width:130px;
 }
+
 
 #timer span{
 display:block;
-font-size:35px;
+font-size:45px;
 color:#d4af37;
 }
 
+
+
+/* زر الموسيقى */
+
+.music-btn{
+display:block;
+margin:40px auto;
+padding:15px 40px;
+border-radius:50px;
+border:1px solid #d4af37;
+background:none;
+color:#d4af37;
+}
+
+
+/* الحركات */
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
+@keyframes float{
+50%{
+transform:translateY(-15px);
+}
+}
+
+
+@keyframes glow{
+50%{
+text-shadow:0 0 25px #d4af37;
+}
+}
+
+
 footer{
 text-align:center;
-padding:30px;
+padding:40px;
 color:#d4af37;
+font-family:"Amiri",serif;
+font-size:22px;
+}
+
+
+@media(max-width:600px){
+
+.hero h1{
+font-size:42px;
+}
+
+.intro h1{
+font-size:35px;
+}
+
 }
