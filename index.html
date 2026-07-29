@@ -163,7 +163,121 @@ font-size:20px;
 <button>
 افتح الدعوة
 </button>
+<section class="hero">
 
+<div class="ring">
+💍
+</div>
+
+<h2>
+دعوة زفاف
+</h2>
+
+<h1>
+أيهم أحمد اللحام
+<br>
+<span>&</span>
+<br>
+سلاف فراس شومان
+</h1>
+
+<p>
+بكل الحب والفرح نتشرف بدعوتكم لمشاركتنا أجمل لحظات العمر،
+وحضور حفل زفافنا.
+</p>
+
+</section>
+
+
+<style>
+
+.hero{
+
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+animation:show 2s;
+
+}
+
+
+.ring{
+
+font-size:90px;
+animation:move 3s infinite;
+
+}
+
+
+.hero h2{
+
+font-family:'Amiri';
+font-size:45px;
+color:#d4af37;
+
+}
+
+
+.hero h1{
+
+font-family:'Amiri';
+font-size:60px;
+line-height:1.5;
+
+}
+
+
+.hero h1 span{
+
+color:#d4af37;
+
+}
+
+
+.hero p{
+
+font-size:20px;
+max-width:600px;
+line-height:2;
+color:#ddd;
+
+}
+
+
+@keyframes move{
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+
+@keyframes show{
+
+from{
+
+opacity:0;
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+</style>
 
 </div>
 
