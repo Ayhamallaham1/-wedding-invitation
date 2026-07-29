@@ -1,69 +1,78 @@
-function enterInvitation(){
+function openInvitation(){
 
-    document.getElementById("intro").style.display="none";
+document.querySelector(".cover").style.display="none";
 
-    document.getElementById("invitation")
-    .classList.remove("hidden");
+document.getElementById("invitation").style.display="block";
 
-    let music=document.getElementById("music");
-
-    music.play().catch(()=>{});
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
+
 
 
 function toggleMusic(){
 
-    let music=document.getElementById("music");
+let music=document.getElementById("music");
 
-    if(music.paused){
-        music.play();
-    }else{
-        music.pause();
-    }
+if(music.paused){
+
+music.play();
+
+}else{
+
+music.pause();
 
 }
+
+}
+
 
 
 
 let weddingDate = new Date("August 21, 2026 19:00:00").getTime();
 
 
-function countdown(){
 
-    let now = new Date().getTime();
-
-    let distance = weddingDate - now;
+let timer = setInterval(function(){
 
 
-    if(distance < 0){
-        document.getElementById("timer").innerHTML="تم بحمد الله 🤍";
-        return;
-    }
+let now = new Date().getTime();
+
+let distance = weddingDate - now;
 
 
-    let days=Math.floor(distance/(1000*60*60*24));
 
-    let hours=Math.floor(
-    (distance%(1000*60*60*24))/(1000*60*60)
-    );
+let days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-    let minutes=Math.floor(
-    (distance%(1000*60*60))/(1000*60)
-    );
+let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-    let seconds=Math.floor(
-    (distance%(1000*60))/1000
-    );
+let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 
-    document.getElementById("days").innerHTML=days;
-    document.getElementById("hours").innerHTML=hours;
-    document.getElementById("minutes").innerHTML=minutes;
-    document.getElementById("seconds").innerHTML=seconds;
+
+document.getElementById("days").innerHTML = days;
+
+document.getElementById("hours").innerHTML = hours;
+
+document.getElementById("minutes").innerHTML = minutes;
+
+document.getElementById("seconds").innerHTML = seconds;
+
+
+
+if(distance < 0){
+
+clearInterval(timer);
+
+document.querySelector(".countdown").innerHTML =
+"تم يومنا الجميل 🤍";
 
 }
 
 
-setInterval(countdown,1000);
-countdown();
+},1000);
