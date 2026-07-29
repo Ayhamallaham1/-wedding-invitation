@@ -6,86 +6,79 @@ box-sizing:border-box;
 
 body{
 
-background:#050505;
-color:#fff;
-font-family:"Cairo",sans-serif;
+background:#fffaf3;
+color:#333;
+font-family:'Cairo',sans-serif;
 overflow-x:hidden;
 
 }
 
 
-/* خلفية ذهبية متحركة */
-
 body::before{
 
 content:"";
+
 position:fixed;
+
 inset:0;
 
 background:
-radial-gradient(circle at 20% 20%,rgba(212,175,55,.25),transparent 35%),
-radial-gradient(circle at 80% 80%,rgba(212,175,55,.18),transparent 35%);
+radial-gradient(circle at top,#fff,#f8e7c0);
 
-animation:bg 12s infinite alternate;
-
-z-index:-1;
-
-}
-
-
-@keyframes bg{
-
-from{
-transform:scale(1);
-}
-
-to{
-transform:scale(1.25);
-}
+z-index:-2;
 
 }
 
 
 
-/* شاشة البداية */
-
-.cover{
+.opening{
 
 height:100vh;
 
 display:flex;
+
+flex-direction:column;
+
 justify-content:center;
+
 align-items:center;
 
 text-align:center;
 
+padding:30px;
+
 position:relative;
+
+overflow:hidden;
 
 }
 
 
-.gold-frame{
+
+.opening::after{
+
+content:"";
 
 position:absolute;
 
-width:320px;
-height:320px;
+width:500px;
 
-border:1px solid rgba(212,175,55,.6);
+height:500px;
 
 border-radius:50%;
 
-animation:rotate 15s linear infinite;
+border:1px solid rgba(212,175,55,.35);
 
-box-shadow:0 0 60px rgba(212,175,55,.3);
+animation:spin 20s linear infinite;
 
 }
 
 
-@keyframes rotate{
+
+@keyframes spin{
 
 from{
-transform:rotate(0);
+transform:rotate(0deg);
 }
 
 to{
@@ -96,42 +89,53 @@ transform:rotate(360deg);
 
 
 
-.cover-content{
+.ornament{
 
-padding:30px;
+font-size:70px;
 
-animation:show 2s;
-
-}
-
-
-.bismillah{
-
-font-family:"Amiri";
-font-size:42px;
 color:#d4af37;
 
+animation:float 3s infinite;
+
 }
+
+
+
+.opening h1{
+
+font-family:'Amiri';
+
+font-size:45px;
+
+color:#b88a20;
+
+margin:20px;
+
+}
+
 
 
 .verse{
 
-font-family:"Amiri";
+font-family:'Amiri';
 
-font-size:22px;
+font-size:24px;
 
 line-height:2.5;
 
-max-width:800px;
+max-width:850px;
 
-margin:30px auto;
+color:#555;
 
 }
 
 
-.cover span{
 
-color:#d4af37;
+.opening span{
+
+color:#b88a20;
+
+margin-top:20px;
 
 }
 
@@ -139,17 +143,17 @@ color:#d4af37;
 
 button{
 
-padding:16px 45px;
-
 margin-top:35px;
 
-background:transparent;
-
-border:1px solid #d4af37;
+padding:16px 55px;
 
 border-radius:50px;
 
-color:#d4af37;
+border:1px solid #d4af37;
+
+background:white;
+
+color:#b88a20;
 
 font-size:18px;
 
@@ -160,27 +164,26 @@ transition:.5s;
 }
 
 
+
 button:hover{
 
 background:#d4af37;
 
-color:#000;
-
-box-shadow:0 0 30px #d4af37;
+color:white;
 
 }
 
 
 
-/* الدعوة */
-
-
-#invitation{
+#wedding{
 
 display:none;
 
 }
 
+
+
+/* الصفحة الرئيسية */
 
 
 .hero{
@@ -199,15 +202,17 @@ text-align:center;
 
 padding:30px;
 
-animation:show 2s;
+animation:fade 2s;
 
 }
 
 
 
-.floating-ring{
+.flower{
 
-font-size:90px;
+font-size:80px;
+
+color:#d4af37;
 
 animation:float 3s infinite;
 
@@ -215,23 +220,13 @@ animation:float 3s infinite;
 
 
 
-@keyframes float{
-
-50%{
-transform:translateY(-20px);
-}
-
-}
-
-
-
 .hero h3{
 
-font-family:"Amiri";
+font-family:'Amiri';
 
 font-size:45px;
 
-color:#d4af37;
+color:#b88a20;
 
 }
 
@@ -239,25 +234,23 @@ color:#d4af37;
 
 .hero h1{
 
-font-family:"Amiri";
+font-family:'Amiri';
 
-font-size:65px;
+font-size:70px;
 
-line-height:1.8;
+color:#333;
 
-margin:20px;
+line-height:1.7;
+
+margin:25px;
 
 }
 
 
 
-.hero h1 i{
+.hero h1 span{
 
 color:#d4af37;
-
-font-style:normal;
-
-display:block;
 
 }
 
@@ -267,20 +260,17 @@ display:block;
 
 font-size:20px;
 
-max-width:700px;
-
 line-height:2;
 
-color:#ddd;
+max-width:700px;
+
+color:#666;
 
 }
 
 
 
-/* الكروت */
-
-
-.info-section{
+.details{
 
 display:flex;
 
@@ -290,27 +280,27 @@ gap:30px;
 
 flex-wrap:wrap;
 
-padding:50px;
+padding:60px 20px;
 
 }
 
 
 
-.luxury-card{
+.card{
 
 width:350px;
 
-padding:40px;
+padding:45px;
 
-background:rgba(255,255,255,.06);
+background:rgba(255,255,255,.8);
 
-border:1px solid rgba(212,175,55,.6);
-
-border-radius:30px;
+border-radius:35px;
 
 text-align:center;
 
-backdrop-filter:blur(15px);
+border:1px solid rgba(212,175,55,.5);
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
 
 transition:.5s;
 
@@ -318,21 +308,27 @@ transition:.5s;
 
 
 
-.luxury-card:hover{
+.card:hover{
 
 transform:translateY(-15px);
-
-box-shadow:0 0 40px rgba(212,175,55,.4);
 
 }
 
 
 
-.luxury-card h2{
+.card-icon{
 
-color:#d4af37;
+font-size:50px;
 
-font-family:"Amiri";
+}
+
+
+
+.card h2{
+
+font-family:'Amiri';
+
+color:#b88a20;
 
 font-size:35px;
 
@@ -340,23 +336,12 @@ font-size:35px;
 
 
 
-.icon{
+.card a{
 
-font-size:45px;
-
-}
-
-
-
-.luxury-card a{
-
-color:#d4af37;
+color:#b88a20;
 
 }
 
-
-
-/* العداد */
 
 
 .countdown-section{
@@ -371,16 +356,17 @@ padding:70px 20px;
 
 .countdown-section h2{
 
-font-family:"Amiri";
+font-family:'Amiri';
 
-font-size:40px;
+font-size:45px;
 
-color:#d4af37;
+color:#b88a20;
 
 }
 
 
-.countdown{
+
+.timer{
 
 display:flex;
 
@@ -396,9 +382,9 @@ margin-top:40px;
 
 
 
-.countdown div{
+.timer div{
 
-background:#111;
+background:white;
 
 border:1px solid #d4af37;
 
@@ -408,25 +394,37 @@ padding:25px;
 
 width:130px;
 
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
 }
 
 
 
-.countdown strong{
+.timer strong{
 
 display:block;
 
 font-size:45px;
 
-color:#d4af37;
+color:#b88a20;
 
 }
 
 
 
-.music-section{
+.timer span{
+
+color:#555;
+
+}
+
+
+
+.extra{
 
 text-align:center;
+
+padding:40px;
 
 }
 
@@ -438,17 +436,27 @@ text-align:center;
 
 padding:50px;
 
-font-family:"Amiri";
+font-family:'Amiri';
 
 font-size:25px;
 
-color:#d4af37;
+color:#b88a20;
 
 }
 
 
 
-@keyframes show{
+@keyframes float{
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+
+
+@keyframes fade{
 
 from{
 
@@ -479,9 +487,9 @@ font-size:42px;
 }
 
 
-.bismillah{
+.opening h1{
 
-font-size:32px;
+font-size:35px;
 
 }
 
