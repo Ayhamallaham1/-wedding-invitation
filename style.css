@@ -5,281 +5,491 @@ box-sizing:border-box;
 }
 
 body{
-background:#020202;
+
+background:#050505;
 color:#fff;
 font-family:"Cairo",sans-serif;
 overflow-x:hidden;
+
 }
+
 
 /* خلفية ذهبية متحركة */
-body:before{
+
+body::before{
+
 content:"";
 position:fixed;
-width:100%;
-height:100%;
+inset:0;
+
 background:
-radial-gradient(circle at 20% 20%,rgba(212,175,55,.15),transparent 30%),
-radial-gradient(circle at 80% 80%,rgba(212,175,55,.12),transparent 30%);
-animation:bgMove 8s infinite alternate;
+radial-gradient(circle at 20% 20%,rgba(212,175,55,.25),transparent 35%),
+radial-gradient(circle at 80% 80%,rgba(212,175,55,.18),transparent 35%);
+
+animation:bg 12s infinite alternate;
+
 z-index:-1;
+
 }
 
-@keyframes bgMove{
-from{transform:scale(1);}
-to{transform:scale(1.2);}
+
+@keyframes bg{
+
+from{
+transform:scale(1);
 }
+
+to{
+transform:scale(1.25);
+}
+
+}
+
 
 
 /* شاشة البداية */
 
-.intro{
+.cover{
+
 height:100vh;
+
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
+
 text-align:center;
-padding:25px;
-animation:fadeIn 2s;
+
+position:relative;
+
 }
 
 
-.intro h1{
-font-family:"Amiri",serif;
-font-size:45px;
+.gold-frame{
+
+position:absolute;
+
+width:320px;
+height:320px;
+
+border:1px solid rgba(212,175,55,.6);
+
+border-radius:50%;
+
+animation:rotate 15s linear infinite;
+
+box-shadow:0 0 60px rgba(212,175,55,.3);
+
+}
+
+
+@keyframes rotate{
+
+from{
+transform:rotate(0);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+
+
+.cover-content{
+
+padding:30px;
+
+animation:show 2s;
+
+}
+
+
+.bismillah{
+
+font-family:"Amiri";
+font-size:42px;
 color:#d4af37;
-animation:glow 3s infinite;
+
 }
 
 
-.intro p{
-font-family:"Amiri",serif;
-font-size:23px;
-line-height:2.3;
-max-width:850px;
-margin-top:25px;
+.verse{
+
+font-family:"Amiri";
+
+font-size:22px;
+
+line-height:2.5;
+
+max-width:800px;
+
+margin:30px auto;
+
 }
 
 
-.intro button{
-margin-top:40px;
-padding:16px 55px;
-border-radius:50px;
+.cover span{
+
+color:#d4af37;
+
+}
+
+
+
+button{
+
+padding:16px 45px;
+
+margin-top:35px;
+
 background:transparent;
+
 border:1px solid #d4af37;
+
+border-radius:50px;
+
 color:#d4af37;
-font-size:20px;
+
+font-size:18px;
+
+cursor:pointer;
+
 transition:.5s;
+
 }
 
 
-.intro button:hover{
+button:hover{
+
 background:#d4af37;
+
 color:#000;
-transform:scale(1.1);
+
+box-shadow:0 0 30px #d4af37;
+
 }
 
 
-.hidden{
+
+/* الدعوة */
+
+
+#invitation{
+
 display:none;
+
 }
 
 
-/* الصفحة الرئيسية */
 
 .hero{
-min-height:90vh;
+
+height:100vh;
+
 display:flex;
+
 flex-direction:column;
+
 justify-content:center;
+
 align-items:center;
+
 text-align:center;
-animation:fadeUp 2s;
+
+padding:30px;
+
+animation:show 2s;
+
 }
 
 
-.ring{
-font-size:80px;
+
+.floating-ring{
+
+font-size:90px;
+
 animation:float 3s infinite;
+
 }
 
 
-.hero h2{
-font-family:"Amiri",serif;
+
+@keyframes float{
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+
+
+.hero h3{
+
+font-family:"Amiri";
+
 font-size:45px;
+
 color:#d4af37;
+
 }
+
 
 
 .hero h1{
-font-family:"Amiri",serif;
+
+font-family:"Amiri";
+
 font-size:65px;
-line-height:1.5;
+
+line-height:1.8;
+
 margin:20px;
+
 }
 
 
-.hero h1 span{
+
+.hero h1 i{
+
 color:#d4af37;
+
+font-style:normal;
+
+display:block;
+
 }
 
 
-.welcome{
-max-width:700px;
+
+.hero p{
+
 font-size:20px;
+
+max-width:700px;
+
 line-height:2;
+
 color:#ddd;
+
 }
 
 
 
-/* البطاقات */
+/* الكروت */
 
-.details{
+
+.info-section{
+
 display:flex;
+
 justify-content:center;
+
 gap:30px;
+
 flex-wrap:wrap;
-padding:40px;
+
+padding:50px;
+
 }
 
 
-.card{
+
+.luxury-card{
+
 width:350px;
+
 padding:40px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(212,175,55,.6);
+
+border-radius:30px;
+
 text-align:center;
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(10px);
-border:1px solid rgba(212,175,55,.5);
-border-radius:25px;
-transition:.6s;
+
+backdrop-filter:blur(15px);
+
+transition:.5s;
+
 }
 
 
-.card:hover{
+
+.luxury-card:hover{
+
 transform:translateY(-15px);
-box-shadow:0 0 40px rgba(212,175,55,.3);
+
+box-shadow:0 0 40px rgba(212,175,55,.4);
+
 }
 
 
-.card h3{
-font-family:"Amiri",serif;
-font-size:32px;
+
+.luxury-card h2{
+
 color:#d4af37;
-margin-bottom:20px;
+
+font-family:"Amiri";
+
+font-size:35px;
+
 }
 
 
-.card a{
+
+.icon{
+
+font-size:45px;
+
+}
+
+
+
+.luxury-card a{
+
 color:#d4af37;
+
 }
+
 
 
 /* العداد */
 
-.countdown{
+
+.countdown-section{
+
 text-align:center;
+
 padding:70px 20px;
+
 }
 
 
-.countdown h2{
-font-family:"Amiri",serif;
+
+.countdown-section h2{
+
+font-family:"Amiri";
+
 font-size:40px;
+
 color:#d4af37;
+
 }
 
 
-#timer{
+.countdown{
+
 display:flex;
+
 justify-content:center;
+
 gap:20px;
+
 flex-wrap:wrap;
-margin-top:35px;
+
+margin-top:40px;
+
 }
 
 
-#timer div{
+
+.countdown div{
+
 background:#111;
+
 border:1px solid #d4af37;
-border-radius:20px;
+
+border-radius:25px;
+
 padding:25px;
+
 width:130px;
+
 }
 
 
-#timer span{
+
+.countdown strong{
+
 display:block;
+
 font-size:45px;
+
 color:#d4af37;
+
 }
 
 
 
-/* زر الموسيقى */
+.music-section{
 
-.music-btn{
-display:block;
-margin:40px auto;
-padding:15px 40px;
-border-radius:50px;
-border:1px solid #d4af37;
-background:none;
-color:#d4af37;
+text-align:center;
+
 }
 
-
-/* الحركات */
-
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
-}
-
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(50px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-
-@keyframes float{
-50%{
-transform:translateY(-15px);
-}
-}
-
-
-@keyframes glow{
-50%{
-text-shadow:0 0 25px #d4af37;
-}
-}
 
 
 footer{
+
 text-align:center;
-padding:40px;
+
+padding:50px;
+
+font-family:"Amiri";
+
+font-size:25px;
+
 color:#d4af37;
-font-family:"Amiri",serif;
-font-size:22px;
+
 }
+
+
+
+@keyframes show{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
 
 
 @media(max-width:600px){
 
 .hero h1{
+
 font-size:42px;
+
 }
 
-.intro h1{
-font-size:35px;
+
+.bismillah{
+
+font-size:32px;
+
+}
+
+
+.verse{
+
+font-size:18px;
+
 }
 
 }
