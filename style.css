@@ -1,99 +1,156 @@
 *{
-margin:0;
+‏margin:0;
 padding:0;
 box-sizing:border-box;
 }
 
-
 body{
-
-background:#faf6ee;
-color:#3d3428;
+background:#fbf7ef;
+color:#3d3328;
 font-family:'Cairo',sans-serif;
-
 overflow-x:hidden;
-
 }
 
 
-
-.cover{
-
-height:100vh;
-
+.preloader{
+position:fixed;
+inset:0;
+background:#fbf7ef;
 display:flex;
 align-items:center;
 justify-content:center;
+z-index:99;
+animation:hideLoader 2s forwards;
+}
 
+
+.gold-ring{
+font-size:80px;
+animation:rotateRing 2s infinite;
+color:#c8a24d;
+}
+
+
+@keyframes hideLoader{
+0%,80%{
+opacity:1;
+}
+100%{
+opacity:0;
+visibility:hidden;
+}
+}
+
+
+@keyframes rotateRing{
+50%{
+transform:translateY(-15px) rotate(10deg);
+}
+}
+
+
+
+.opening{
+
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
 padding:20px;
 
-background:
-radial-gradient(circle,#fff,#f5ead5);
+}
+
+
+.decor{
+
+position:absolute;
+width:300px;
+height:300px;
+border:1px solid rgba(200,162,77,.3);
+border-radius:50%;
 
 }
 
 
+.decor-one{
+top:-100px;
+right:-100px;
+}
 
-.card{
 
-background:white;
+.decor-two{
+bottom:-100px;
+left:-100px;
+}
 
+
+
+.invitation-card{
+
+background:#fff;
 width:90%;
 max-width:650px;
-
-padding:55px 35px;
-
+padding:60px 35px;
 text-align:center;
 
-border:1px solid #d4af37;
+border:1px solid #c8a24d;
+box-shadow:0 20px 60px rgba(0,0,0,.12);
 
-box-shadow:0 20px 50px rgba(0,0,0,.12);
-
-animation:show 1.8s;
-
-}
-
-
-
-.symbol{
-
-font-size:55px;
-
-color:#d4af37;
+animation:cardShow 2s;
 
 }
 
 
 
-.card h2{
+@keyframes cardShow{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+}
+
+}
+
+
+
+.top-symbol{
+
+font-size:50px;
+color:#c8a24d;
+
+}
+
+
+
+.invitation-card h2{
 
 font-family:'Amiri';
-
 font-size:38px;
-
-color:#b18a2c;
+color:#b08a3c;
 
 }
 
 
 
-.card p{
+.quran{
 
 font-family:'Amiri';
-
-font-size:23px;
-
+font-size:22px;
 line-height:2.5;
-
 margin:25px 0;
 
 }
 
 
 
-.card span{
+.invitation-card span{
 
-color:#b18a2c;
+color:#b08a3c;
 
 }
 
@@ -102,16 +159,13 @@ color:#b18a2c;
 button{
 
 margin-top:30px;
-
-padding:15px 45px;
-
+padding:15px 50px;
 border-radius:50px;
 
-border:1px solid #d4af37;
-
 background:white;
+border:1px solid #c8a24d;
 
-color:#b18a2c;
+color:#b08a3c;
 
 font-size:18px;
 
@@ -125,15 +179,14 @@ transition:.4s;
 
 button:hover{
 
-background:#d4af37;
-
+background:#c8a24d;
 color:white;
 
 }
 
 
 
-#wedding{
+#content{
 
 display:none;
 
@@ -146,12 +199,10 @@ display:none;
 height:100vh;
 
 display:flex;
+align-items:center;
+justify-content:center;
 
 flex-direction:column;
-
-align-items:center;
-
-justify-content:center;
 
 text-align:center;
 
@@ -161,27 +212,22 @@ padding:30px;
 
 
 
-.line{
+.ornament-line{
 
+height:1px;
 width:120px;
-
-height:2px;
-
-background:#d4af37;
-
+background:#c8a24d;
 margin:25px;
 
 }
 
 
 
-.hero h3{
+.hero>p:first-child{
 
 font-family:'Amiri';
-
-font-size:48px;
-
-color:#b18a2c;
+font-size:45px;
+color:#b08a3c;
 
 }
 
@@ -190,9 +236,7 @@ color:#b18a2c;
 .hero h1{
 
 font-family:'Amiri';
-
 font-size:70px;
-
 line-height:1.7;
 
 }
@@ -201,43 +245,38 @@ line-height:1.7;
 
 .hero h1 span{
 
-color:#d4af37;
+color:#c8a24d;
 
 }
 
 
 
-.hero p{
+.welcome{
 
+max-width:700px;
 font-size:20px;
-
+line-height:2;
 color:#777;
 
-max-width:650px;
-
-line-height:2;
-
 }
 
 
 
-.boxes{
+
+.event-section{
 
 display:flex;
-
 justify-content:center;
-
 gap:30px;
-
 flex-wrap:wrap;
 
-padding:50px 20px;
+padding:60px 20px;
 
 }
 
 
 
-.box{
+.lux-card{
 
 background:white;
 
@@ -247,43 +286,43 @@ padding:45px;
 
 text-align:center;
 
-border:1px solid #d4af37;
+border:1px solid rgba(200,162,77,.5);
 
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-}
-
-
-
-.box div{
-
-font-size:45px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
 
 }
 
 
 
-.box h2{
+.card-symbol{
+
+font-size:40px;
+color:#c8a24d;
+
+}
+
+
+
+.lux-card h2{
 
 font-family:'Amiri';
-
 font-size:35px;
-
-color:#b18a2c;
-
-}
-
-
-
-.box a{
-
-color:#b18a2c;
+color:#b08a3c;
 
 }
 
 
 
-.countdown{
+.lux-card a{
+
+color:#b08a3c;
+
+}
+
+
+
+
+.countdown-section{
 
 text-align:center;
 
@@ -293,39 +332,37 @@ padding:70px 20px;
 
 
 
-.countdown h2{
+.countdown-section h2{
 
 font-family:'Amiri';
-
 font-size:45px;
-
-color:#b18a2c;
+color:#b08a3c;
 
 }
 
 
 
-.timer{
+.countdown{
 
 display:flex;
 
 justify-content:center;
 
-gap:15px;
+gap:20px;
 
 flex-wrap:wrap;
 
-margin-top:35px;
+margin-top:40px;
 
 }
 
 
 
-.timer div{
+.countdown div{
 
 background:white;
 
-border:1px solid #d4af37;
+border:1px solid #c8a24d;
 
 padding:25px;
 
@@ -335,19 +372,27 @@ min-width:120px;
 
 
 
-.timer strong{
+.countdown strong{
 
 display:block;
 
 font-size:45px;
 
-color:#b18a2c;
+color:#b08a3c;
 
 }
 
 
 
-.music{
+.countdown span{
+
+color:#777;
+
+}
+
+
+
+.music-section{
 
 text-align:center;
 
@@ -367,27 +412,29 @@ font-family:'Amiri';
 
 font-size:25px;
 
-color:#b18a2c;
+color:#b08a3c;
 
 }
 
 
 
-@keyframes show{
+.footer-line{
 
-from{
+width:100px;
 
-opacity:0;
+height:1px;
 
-transform:translateY(40px);
+background:#c8a24d;
 
-}
-
-to{
-
-opacity:1;
+margin:auto auto 20px;
 
 }
+
+
+
+.small{
+
+font-size:18px;
 
 }
 
@@ -402,14 +449,14 @@ font-size:42px;
 }
 
 
-.hero h3{
+.hero>p:first-child{
 
 font-size:35px;
 
 }
 
 
-.card p{
+.quran{
 
 font-size:18px;
 
