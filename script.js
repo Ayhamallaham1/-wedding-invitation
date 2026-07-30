@@ -1,8 +1,8 @@
-function openInvitation(){
+function enterWedding(){
 
-document.querySelector(".cover").style.display="none";
+document.querySelector(".opening").style.display="none";
 
-document.getElementById("invitation").style.display="block";
+document.getElementById("wedding").style.display="block";
 
 window.scrollTo({
 top:0,
@@ -15,7 +15,7 @@ behavior:"smooth"
 
 function toggleMusic(){
 
-let music=document.getElementById("music");
+let music = document.getElementById("music");
 
 if(music.paused){
 
@@ -31,12 +31,11 @@ music.pause();
 
 
 
-
 let weddingDate = new Date("August 21, 2026 19:00:00").getTime();
 
 
 
-let timer = setInterval(function(){
+let countdown = setInterval(function(){
 
 
 let now = new Date().getTime();
@@ -45,13 +44,13 @@ let distance = weddingDate - now;
 
 
 
-let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+let days = Math.floor(distance / (1000*60*60*24));
 
-let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+let hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
 
-let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+let minutes = Math.floor((distance % (1000*60*60))/(1000*60));
 
-let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+let seconds = Math.floor((distance % (1000*60))/1000);
 
 
 
@@ -63,16 +62,6 @@ document.getElementById("minutes").innerHTML = minutes;
 
 document.getElementById("seconds").innerHTML = seconds;
 
-
-
-if(distance < 0){
-
-clearInterval(timer);
-
-document.querySelector(".countdown").innerHTML =
-"تم يومنا الجميل 🤍";
-
-}
 
 
 },1000);
