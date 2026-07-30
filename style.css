@@ -4,138 +4,96 @@ padding:0;
 box-sizing:border-box;
 }
 
+
 body{
 
-background:#fffaf3;
-color:#333;
+background:#faf6ee;
+color:#3d3428;
 font-family:'Cairo',sans-serif;
+
 overflow-x:hidden;
 
 }
 
 
-body::before{
 
-content:"";
-
-position:fixed;
-
-inset:0;
-
-background:
-radial-gradient(circle at top,#fff,#f8e7c0);
-
-z-index:-2;
-
-}
-
-
-
-.opening{
+.cover{
 
 height:100vh;
 
 display:flex;
-
-flex-direction:column;
-
+align-items:center;
 justify-content:center;
 
-align-items:center;
+padding:20px;
+
+background:
+radial-gradient(circle,#fff,#f5ead5);
+
+}
+
+
+
+.card{
+
+background:white;
+
+width:90%;
+max-width:650px;
+
+padding:55px 35px;
 
 text-align:center;
 
-padding:30px;
+border:1px solid #d4af37;
 
-position:relative;
+box-shadow:0 20px 50px rgba(0,0,0,.12);
 
-overflow:hidden;
-
-}
-
-
-
-.opening::after{
-
-content:"";
-
-position:absolute;
-
-width:500px;
-
-height:500px;
-
-border-radius:50%;
-
-border:1px solid rgba(212,175,55,.35);
-
-animation:spin 20s linear infinite;
+animation:show 1.8s;
 
 }
 
 
 
-@keyframes spin{
+.symbol{
 
-from{
-transform:rotate(0deg);
-}
-
-to{
-transform:rotate(360deg);
-}
-
-}
-
-
-
-.ornament{
-
-font-size:70px;
+font-size:55px;
 
 color:#d4af37;
 
-animation:float 3s infinite;
+}
+
+
+
+.card h2{
+
+font-family:'Amiri';
+
+font-size:38px;
+
+color:#b18a2c;
 
 }
 
 
 
-.opening h1{
+.card p{
 
 font-family:'Amiri';
 
-font-size:45px;
-
-color:#b88a20;
-
-margin:20px;
-
-}
-
-
-
-.verse{
-
-font-family:'Amiri';
-
-font-size:24px;
+font-size:23px;
 
 line-height:2.5;
 
-max-width:850px;
-
-color:#555;
+margin:25px 0;
 
 }
 
 
 
-.opening span{
+.card span{
 
-color:#b88a20;
-
-margin-top:20px;
+color:#b18a2c;
 
 }
 
@@ -143,9 +101,9 @@ margin-top:20px;
 
 button{
 
-margin-top:35px;
+margin-top:30px;
 
-padding:16px 55px;
+padding:15px 45px;
 
 border-radius:50px;
 
@@ -153,13 +111,13 @@ border:1px solid #d4af37;
 
 background:white;
 
-color:#b88a20;
+color:#b18a2c;
 
 font-size:18px;
 
 cursor:pointer;
 
-transition:.5s;
+transition:.4s;
 
 }
 
@@ -183,9 +141,6 @@ display:none;
 
 
 
-/* الصفحة الرئيسية */
-
-
 .hero{
 
 height:100vh;
@@ -194,27 +149,27 @@ display:flex;
 
 flex-direction:column;
 
-justify-content:center;
-
 align-items:center;
+
+justify-content:center;
 
 text-align:center;
 
 padding:30px;
 
-animation:fade 2s;
-
 }
 
 
 
-.flower{
+.line{
 
-font-size:80px;
+width:120px;
 
-color:#d4af37;
+height:2px;
 
-animation:float 3s infinite;
+background:#d4af37;
+
+margin:25px;
 
 }
 
@@ -224,9 +179,9 @@ animation:float 3s infinite;
 
 font-family:'Amiri';
 
-font-size:45px;
+font-size:48px;
 
-color:#b88a20;
+color:#b18a2c;
 
 }
 
@@ -238,11 +193,7 @@ font-family:'Amiri';
 
 font-size:70px;
 
-color:#333;
-
 line-height:1.7;
-
-margin:25px;
 
 }
 
@@ -260,17 +211,17 @@ color:#d4af37;
 
 font-size:20px;
 
+color:#777;
+
+max-width:650px;
+
 line-height:2;
-
-max-width:700px;
-
-color:#666;
 
 }
 
 
 
-.details{
+.boxes{
 
 display:flex;
 
@@ -280,71 +231,59 @@ gap:30px;
 
 flex-wrap:wrap;
 
-padding:60px 20px;
+padding:50px 20px;
 
 }
 
 
 
-.card{
+.box{
 
-width:350px;
+background:white;
+
+width:340px;
 
 padding:45px;
 
-background:rgba(255,255,255,.8);
-
-border-radius:35px;
-
 text-align:center;
 
-border:1px solid rgba(212,175,55,.5);
+border:1px solid #d4af37;
 
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-transition:.5s;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
 
 }
 
 
 
-.card:hover{
+.box div{
 
-transform:translateY(-15px);
-
-}
-
-
-
-.card-icon{
-
-font-size:50px;
+font-size:45px;
 
 }
 
 
 
-.card h2{
+.box h2{
 
 font-family:'Amiri';
 
-color:#b88a20;
-
 font-size:35px;
 
-}
-
-
-
-.card a{
-
-color:#b88a20;
+color:#b18a2c;
 
 }
 
 
 
-.countdown-section{
+.box a{
+
+color:#b18a2c;
+
+}
+
+
+
+.countdown{
 
 text-align:center;
 
@@ -354,13 +293,13 @@ padding:70px 20px;
 
 
 
-.countdown-section h2{
+.countdown h2{
 
 font-family:'Amiri';
 
 font-size:45px;
 
-color:#b88a20;
+color:#b18a2c;
 
 }
 
@@ -372,11 +311,11 @@ display:flex;
 
 justify-content:center;
 
-gap:20px;
+gap:15px;
 
 flex-wrap:wrap;
 
-margin-top:40px;
+margin-top:35px;
 
 }
 
@@ -388,13 +327,9 @@ background:white;
 
 border:1px solid #d4af37;
 
-border-radius:25px;
-
 padding:25px;
 
-width:130px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+min-width:120px;
 
 }
 
@@ -406,25 +341,17 @@ display:block;
 
 font-size:45px;
 
-color:#b88a20;
+color:#b18a2c;
 
 }
 
 
 
-.timer span{
-
-color:#555;
-
-}
-
-
-
-.extra{
+.music{
 
 text-align:center;
 
-padding:40px;
+padding:30px;
 
 }
 
@@ -440,23 +367,13 @@ font-family:'Amiri';
 
 font-size:25px;
 
-color:#b88a20;
+color:#b18a2c;
 
 }
 
 
 
-@keyframes float{
-
-50%{
-transform:translateY(-20px);
-}
-
-}
-
-
-
-@keyframes fade{
+@keyframes show{
 
 from{
 
@@ -469,8 +386,6 @@ transform:translateY(40px);
 to{
 
 opacity:1;
-
-transform:translateY(0);
 
 }
 
@@ -487,14 +402,14 @@ font-size:42px;
 }
 
 
-.opening h1{
+.hero h3{
 
 font-size:35px;
 
 }
 
 
-.verse{
+.card p{
 
 font-size:18px;
 
