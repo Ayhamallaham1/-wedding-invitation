@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -25,38 +25,32 @@
 </audio>
 
 
-
-<div class="preloader">
-
-<div class="gold-ring">
-💍
-</div>
-
+<div class="loader">
+<div class="loader-ring"></div>
 </div>
 
 
 
-<section class="opening">
+<section class="opening" id="opening">
 
 
-<div class="decor decor-one"></div>
-<div class="decor decor-two"></div>
+<div class="background-glow"></div>
 
 
-<div class="invitation-card">
-
-
-<div class="top-symbol">
+<div class="ornament top">
 ✦
 </div>
 
 
-<h2>
+<div class="opening-card">
+
+
+<p class="bismillah">
 بسم الله الرحمن الرحيم
-</h2>
+</p>
 
 
-<p class="quran">
+<p class="verse">
 
 ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ
 أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ
@@ -70,13 +64,17 @@
 </span>
 
 
+
 <button onclick="openInvitation()">
-
 فتح الدعوة
-
 </button>
 
 
+</div>
+
+
+<div class="ornament bottom">
+✦
 </div>
 
 
@@ -85,58 +83,62 @@
 
 
 
-<main id="content">
+
+<main id="mainWedding">
+
 
 
 <section class="hero">
 
 
-<div class="ornament-line"></div>
+<div class="gold-frame"></div>
 
 
-<p>
+<p class="small-title">
 دعوة زفاف
 </p>
 
 
 <h1>
-
 أيهم أحمد اللحام
-
-<br>
-
-<span>
-&
-</span>
-
-<br>
-
-سلاف فراس شومان
-
 </h1>
 
 
-<div class="ornament-line"></div>
+<div class="symbol">
+&
+</div>
 
 
-<p class="welcome">
+<h1>
+سلاف فراس شومان
+</h1>
 
-بكل الحب والسعادة ندعوكم لمشاركتنا أجمل يوم في حياتنا،
-حضوركم يزيد فرحتنا.
+
+
+<p class="hero-text">
+
+بكل الحب والسعادة نتشرف بدعوتكم
+لمشاركتنا أجمل يوم في حياتنا
 
 </p>
 
 
+
 </section>
 
-<section class="event-section">
 
 
-<div class="lux-card">
 
 
-<div class="card-symbol">
-✧
+
+<section class="lux-section">
+
+
+<div class="lux-box reveal">
+
+
+<div class="section-icon">
+✦
 </div>
 
 
@@ -149,11 +151,8 @@
 الجمعة
 <br>
 21 أغسطس 2026
-</p>
-
-
-<p>
-🕖 الساعة 7:00 مساءً
+<br>
+الساعة 7:00 مساءً
 </p>
 
 
@@ -163,30 +162,28 @@
 
 
 
-<div class="lux-card">
+<div class="lux-box reveal">
 
 
-<div class="card-symbol">
-✧
+<div class="section-icon">
+✦
 </div>
 
 
 <h2>
-مكان الحفل
+المكان
 </h2>
 
 
 <p>
 قاعة السعادة
 <br>
-بيت لحم - باب الزقاق - السينما
+بيت لحم - باب الزقاق
 </p>
 
 
-<a href="https://maps.google.com/?q=31.708216,35.199986" target="_blank">
-
-فتح الموقع
-
+<a href="https://maps.google.com/?q=31.708216,35.199986">
+عرض الموقع
 </a>
 
 
@@ -200,72 +197,39 @@
 
 
 
-<section class="countdown-section">
+
+<section class="countdown reveal">
 
 
 <h2>
-ننتظركم في يومنا الكبير
+باقي على فرحتنا
 </h2>
 
 
-
-<div class="countdown">
+<div class="timer">
 
 
 <div>
-
-<strong id="days">
-0
-</strong>
-
-<span>
-يوم
-</span>
-
+<strong id="days">00</strong>
+<span>يوم</span>
 </div>
 
 
-
 <div>
-
-<strong id="hours">
-0
-</strong>
-
-<span>
-ساعة
-</span>
-
+<strong id="hours">00</strong>
+<span>ساعة</span>
 </div>
 
 
-
-
 <div>
-
-<strong id="minutes">
-0
-</strong>
-
-<span>
-دقيقة
-</span>
-
+<strong id="minutes">00</strong>
+<span>دقيقة</span>
 </div>
 
 
-
-
 <div>
-
-<strong id="seconds">
-0
-</strong>
-
-<span>
-ثانية
-</span>
-
+<strong id="seconds">00</strong>
+<span>ثانية</span>
 </div>
 
 
@@ -279,38 +243,35 @@
 
 
 
-<section class="music-section">
+
+<section class="music-area">
 
 
 <button onclick="toggleMusic()">
-
 🎹 تشغيل الموسيقى
-
 </button>
 
 
 </section>
 
+
+
+
+
 <footer>
 
-<div class="footer-line"></div>
-
-
-<p>
 فرحتنا تكتمل بوجودكم 🤍
-</p>
 
+<br>
 
-<p class="small">
 أيهم & سلاف
-</p>
-
 
 </footer>
 
 
 
 </main>
+
 
 
 
